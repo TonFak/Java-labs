@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.EditController" spacing="10" style="-fx-padding: 10;" prefWidth="400">
+
+    <Label text="Заголовок:"/>
+    <TextField fx:id="titleField"/>
+
+    <Label text="Описание:"/>
+    <TextArea fx:id="descriptionArea" prefRowCount="3"/>
+
+    <Label text="Срок выполнения:"/>
+    <DatePicker fx:id="dueDatePicker"/>
+
+    <Label text="Приоритет:"/>
+    <ComboBox fx:id="priorityCombo"/>
+
+    <Label text="Категория:"/>
+    <ComboBox fx:id="categoryCombo"/>
+
+    <HBox spacing="10" style="-fx-padding: 5;" alignment="CENTER_RIGHT">
+        <Button fx:id="cancelButton" text="Отмена" onAction="#handleCancel"/>
+        <Button fx:id="saveButton" text="Сохранить" onAction="#handleSave" defaultButton="true"/>
+    </HBox>
+</VBox>

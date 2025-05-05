@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.MainController" spacing="10" style="-fx-padding: 10;">
+
+    <MenuBar>
+        <Menu text="Файл">
+            <MenuItem text="Выход" onAction="#handleExit"/>
+        </Menu>
+        <Menu text="Справка">
+            <MenuItem text="О программе" onAction="#handleAbout"/>
+        </Menu>
+    </MenuBar>
+
+    <HBox spacing="10" style="-fx-padding: 5;">
+        <TextField fx:id="searchField" promptText="Поиск..." style="-fx-pref-width: 200;"/>
+        <ComboBox fx:id="categoryFilter" promptText="Все категории" style="-fx-pref-width: 150;"/>
+        <DatePicker fx:id="dateFilter" promptText="Все даты" style="-fx-pref-width: 150;"/>
+        <Button text="Сбросить фильтры" onAction="#resetFilters"/>
+    </HBox>
+
+    <TableView fx:id="tasksTable" style="-fx-pref-height: 400;">
+        <columns>
+            <TableColumn fx:id="titleColumn" text="Заголовок" prefWidth="200"/>
+            <TableColumn fx:id="descriptionColumn" text="Описание" prefWidth="300"/>
+            <TableColumn fx:id="dueDateColumn" text="Срок выполнения" prefWidth="150"/>
+            <TableColumn fx:id="priorityColumn" text="Приоритет" prefWidth="100"/>
+            <TableColumn fx:id="categoryColumn" text="Категория" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" style="-fx-padding: 5;" alignment="CENTER_RIGHT">
+        <Button fx:id="addButton" text="Добавить" onAction="#handleAdd"/>
+        <Button fx:id="editButton" text="Редактировать" onAction="#handleEdit"/>
+        <Button fx:id="deleteButton" text="Удалить" onAction="#handleDelete"/>
+    </HBox>
+</VBox>
